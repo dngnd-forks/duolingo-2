@@ -1,3 +1,5 @@
+console.log(process.env)
+
 const headers = {
   'Content-Type': 'application/json',
   Authorization: `Bearer ${process.env.DUOLINGO_JWT}`,
