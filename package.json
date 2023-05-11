@@ -1,0 +1,15 @@
+{
+  "name": "duolingo",
+  "version": "0.0.0",
+  "description": "Script to farm Duolingo XP",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild index.js --platform=browser --outdir=dist --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.17.18"
+  }
+}
