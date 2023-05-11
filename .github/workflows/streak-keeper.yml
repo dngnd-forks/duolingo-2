@@ -1,11 +1,8 @@
 name: Keep my Duolingo streak
 
 on:
-  push:
-    branches:
-      - main
-#   schedule:
-#     - cron: '0 9 * * *'
+  schedule:
+    - cron: '0 9 * * *'
 
 env:
   DUOLINGO_USER_ID: ${{ secrets.DUOLINGO_USER_ID }}
