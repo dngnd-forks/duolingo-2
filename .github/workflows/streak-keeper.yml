@@ -8,8 +8,8 @@ on:
 #     - cron: '0 9 * * *'
 
 env:
-  DUOLINGO_USER_ID: '123'
-  DUOLINGO_JWT: 'abc'
+  DUOLINGO_USER_ID: ${{ secrets.DUOLINGO_USER_ID }}
+  DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
 
 jobs:
   study:
