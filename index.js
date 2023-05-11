@@ -1,15 +1,14 @@
-const id = document.cookie
-  .split(';')
-  .find(cookie => cookie.includes('logged_out_uuid'))
-  .split('=')[1]
+const headers = {
+  'Content-Type': 'application/json',
+  Authorization: `Bearer ${process.env.DUOLINGO_JWT}`,
+  'user-agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
+}
 
 const { fromLanguage, learningLanguage, xpGains } = await fetch(
-  `https://www.duolingo.com/2017-06-30/users/${id}?fields=fromLanguage,learningLanguage,xpGains`,
+  `https://www.duolingo.com/2017-06-30/users/${process.env.DUOLINGO_USER_ID}?fields=fromLanguage,learningLanguage,xpGains`,
   {
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
   },
 ).then(response => response.json())
 
@@ -65,10 +64,7 @@ const session = await fetch('https://www.duolingo.com/2017-06-30/sessions', {
     smartTipsVersion: 2,
     type: 'SPEAKING_PRACTICE',
   }),
-  credentials: 'include',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  headers,
   method: 'POST',
 }).then(response => response.json())
 
@@ -85,12 +81,9 @@ const response = await fetch(
       maxInLessonStreak: 9,
       shouldLearnThings: true,
     }),
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     method: 'PUT',
   },
 ).then(response => response.json())
 
-response.xpGain
+console.log(response.xpGain)

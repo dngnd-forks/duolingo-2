@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Script to farm Duolingo XP",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "esbuild index.js --platform=browser --outdir=dist --minify"
   },
