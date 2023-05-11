@@ -1,4 +1,4 @@
-name: Duolingo
+name: Streak Keeper
 
 runs:
   using: 'node16'
