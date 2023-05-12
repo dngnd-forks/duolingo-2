@@ -1,14 +1,12 @@
-name: Keep my Duolingo streak
+name: Push to main branch
 
 on:
-  schedule:
-    - cron: '0 9 * * *'
-
-env:
-  DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
+  push:
+    branches:
+      - main
 
 jobs:
-  study:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,4 +15,4 @@ jobs:
         with:
           node-version: 18
 
-      - run: node index.js
+      - run: npx semantic-release

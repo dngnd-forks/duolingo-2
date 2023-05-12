@@ -2,8 +2,9 @@
   "name": "duolingo",
   "version": "0.0.0",
   "description": "Script to farm Duolingo XP",
+  "private": true,
   "type": "module",
-  "scripts": {
-    "study": "node index.js"
+  "devDependencies": {
+    "semantic-release": "^21.0.2"
   }
 }
