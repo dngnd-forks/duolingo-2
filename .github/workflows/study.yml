@@ -1,0 +1,20 @@
+name: Do a Duolingo lesson
+
+on: [workflow_dispatch]
+
+env:
+  DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
+
+jobs:
+  study:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: npm install
+
+      - run: node index.js
