@@ -16,3 +16,5 @@ jobs:
           node-version: 18
 
       - run: npx semantic-release --branches main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
