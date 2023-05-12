@@ -1,5 +1,3 @@
-import fetch from 'node-fetch'
-
 const headers = {
   'Content-Type': 'application/json',
   Authorization: `Bearer ${process.env.DUOLINGO_JWT}`,
@@ -7,8 +5,12 @@ const headers = {
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
 }
 
+const { sub } = JSON.parse(
+  Buffer.from(process.env.DUOLINGO_JWT.split('.')[1], 'base64').toString(),
+)
+
 const { fromLanguage, learningLanguage, xpGains } = await fetch(
-  `https://www.duolingo.com/2017-06-30/users/${process.env.DUOLINGO_USER_ID}?fields=fromLanguage,learningLanguage,xpGains`,
+  `https://www.duolingo.com/2017-06-30/users/${sub}?fields=fromLanguage,learningLanguage,xpGains`,
   {
     headers,
   },
@@ -88,4 +90,4 @@ const response = await fetch(
   },
 ).then(response => response.json())
 
-console.log(response.xpGain)
+console.log({ xp: response.xpGain })

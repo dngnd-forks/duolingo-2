@@ -1,5 +1,0 @@
-name: Streak Keeper
-
-runs:
-  using: 'node16'
-  main: 'index.js'

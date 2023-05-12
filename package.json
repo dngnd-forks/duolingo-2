@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Script to farm Duolingo XP",
   "type": "module",
-  "dependencies": {
-    "node-fetch": "^3.3.1"
+  "scripts": {
+    "study": "node index.js"
   }
 }
