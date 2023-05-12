@@ -15,4 +15,4 @@ jobs:
         with:
           node-version: 18
 
-      - run: npx semantic-release
+      - run: npx semantic-release --branches main
