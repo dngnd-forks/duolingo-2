@@ -1,6 +1,6 @@
 {
   "name": "duolingo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Script to farm Duolingo XP",
   "private": true,
   "type": "module",
