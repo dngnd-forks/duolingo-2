@@ -1,6 +1,13 @@
 name: Do a Duolingo lesson
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      lessons:
+        default: 1
+        description: 'Number of lessons to be done'
+        required: false
+        type: number
 
 env:
   DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
@@ -16,3 +23,5 @@ jobs:
           node-version: 18
 
       - run: node index.js
+        env:
+          LESSONS: ${{ inputs.lessons }}
