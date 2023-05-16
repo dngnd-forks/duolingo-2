@@ -18,3 +18,5 @@ jobs:
           node-version: 18
 
       - run: node index.js
+        env:
+          LESSONS: 1
