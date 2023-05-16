@@ -1,7 +1,7 @@
 {
   "name": "duolingo",
   "version": "1.1.1",
-  "description": "Script to farm Duolingo XP",
+  "description": "Streak keeper and XP farm for Duolingo",
   "private": true,
   "type": "module",
   "devDependencies": {
