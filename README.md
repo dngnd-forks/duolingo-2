@@ -8,7 +8,7 @@ Streak keeper and XP farm for Duolingo. Never get demoted again!
 
 ## Usage
 
-To make it work, you need to make get an authorization token from the [Duoliongo](duolingo.com) web app. Simply run the following script in the browser's console while logged in:
+To make it work, you need to make get an authorization token from the [Duolingo](https://duolingo.com) web app. Simply run the following script in the browser's console while logged in:
 
 ```js
 document.cookie
