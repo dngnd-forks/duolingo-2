@@ -9,9 +9,6 @@ on:
         required: false
         type: number
 
-env:
-  DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
-
 jobs:
   study:
     runs-on: ubuntu-latest
@@ -24,4 +21,5 @@ jobs:
 
       - run: node index.js
         env:
+          DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
           LESSONS: ${{ inputs.lessons }}
