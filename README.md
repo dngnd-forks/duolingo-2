@@ -17,7 +17,7 @@ document.cookie
   .split('=')[1]
 ```
 
-Then copy the token given and set a (repository secret)[https://docs.github.com/actions/learn-github-actions/variables] with the name `DUOLINGO_JWT` in your GitHub Actions settings.
+Then copy the token given and set a [repository secret](https://docs.github.com/actions/learn-github-actions/variables) with the name `DUOLINGO_JWT` in your GitHub Actions settings.
 
 ## Workflows
 
