@@ -7,9 +7,9 @@
 Streak keeper and XP farm for Duolingo. Never get demoted again!
 
 ### How to use
-1. Fork this repository
-2. Go to https://www.duolingo.com
-3. Open the browser's console
+1. [Fork this repository](https://github.com/rfoel/duolingo/fork)
+2. Go to [Duolingo](https://www.duolingo.com)
+3. While logged in, open the browser's console (Option (⌥) + Command (⌘) + J (on macOS) or Shift + CTRL + J (on Windows/Linux))
 4. Get the JWT token by pasting this in the console, and copy the value ( without `'`)
 
 ```js
