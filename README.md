@@ -6,18 +6,23 @@
 
 Streak keeper and XP farm for Duolingo. Never get demoted again!
 
-## Usage
-
-To make it work, you need to make get an authorization token from the [Duolingo](https://duolingo.com) web app. Simply run the following script in the browser's console while logged in:
+### How to use
+1. Fork this repository
+2. Go to https://www.duolingo.com
+3. Open the browser's console
+4. Get the JWT token by pasting this in the console, and copy the value ( without `'`)
 
 ```js
 document.cookie
   .split(';')
   .find(cookie => cookie.includes('jwt_token'))
   .split('=')[1]
-```
-
-Then copy the token given and set a [repository secret](https://docs.github.com/actions/learn-github-actions/variables) with the name `DUOLINGO_JWT` in your GitHub Actions settings.
+ ```
+  
+  5. Go to your forked repository
+  6. Go to Settings > Secrets and Variables > Actions . And click the button `New Repository secret`
+  7. For the secret name use `DUOLINGO_JWT` for the secret value use the copied value from step 4.
+  8. Go the your forked repository and go the Actions tab and press the button `I understand my workflows, go ahead and enable them`
 
 ## Workflows
 
