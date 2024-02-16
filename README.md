@@ -7,6 +7,7 @@
 Streak keeper and XP farm for Duolingo. Never get demoted again!
 
 ### How to use
+
 1. [Fork this repository](https://github.com/rfoel/duolingo/fork)
 2. Go to [Duolingo](https://www.duolingo.com)
 3. While logged in, open the browser's console (Option (⌥) + Command (⌘) + J (on macOS) or Shift + CTRL + J (on Windows/Linux))
@@ -38,3 +39,19 @@ This repository can also "study" lessons for you. This will give you XP so you w
 
 - This project won't help with your daily or friend quests, it can only earn XP to move up the league rank;
 - This project won't do real lessons or stories, only practices, so it won't affect your learning path;
+
+## Running as a standalone script
+
+You can run this script outside GitHub if you want to. You can have an `.env` file with the `DUOLINGO_JWT` and run the script like so:
+
+```
+node --env-file=.env index.js
+```
+
+> Node v20.6.0 or later is needed to use the `--env-file` flag.
+
+You can also load the env in the terminal like so:
+
+```
+DUOLINGO_JWT=... node index.js
+```
