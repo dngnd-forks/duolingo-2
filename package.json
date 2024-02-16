@@ -1,25 +1,6 @@
 {
-  "name": "duolingo",
-  "version": "1.1.1",
-  "description": "Streak keeper and XP farm for Duolingo",
-  "private": true,
-  "type": "module",
-  "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^21.0.2"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      "@semantic-release/git",
-      "@semantic-release/changelog"
-    ]
-  }
+	"name": "duolingo",
+	"version": "0.0.0",
+	"description": "Streak keeper and XP farm for Duolingo",
+	"type": "module"
 }
