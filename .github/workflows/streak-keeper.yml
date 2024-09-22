@@ -4,7 +4,11 @@ on:
   schedule:
     - cron: '0 9 * * *'
   workflow_dispatch:
-    inputs: {}
+    inputs:
+      days_to_repair:
+        description: 'Number of days to repair streak (default is 30)'
+        required: false
+        default: '30'
 
 jobs:
   study:
@@ -16,6 +20,7 @@ jobs:
         env:
           DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
           LESSONS: 1
+          DAYS_TO_REPAIR: ${{ github.event.inputs.days_to_repair }}
   delete-old-runs:
     runs-on: ubuntu-latest
     permissions:
