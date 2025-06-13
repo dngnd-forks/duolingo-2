@@ -5,7 +5,7 @@ on:
     inputs:
       lessons:
         default: 1
-        description: 'Number of lessons to be completed'
+        description: 'Nombre de lessons a faire'
         required: false
         type: number
 
