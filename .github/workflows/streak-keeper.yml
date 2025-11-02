@@ -3,15 +3,13 @@ name: Keep my Duolingo streak
 on:
   schedule:
     - cron: '0 9 * * *'
-  workflow_dispatch:
-    inputs: {}
 
 jobs:
   study:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
+      - uses: oven-sh/setup-bun@v2
       - run: bun index.js
         env:
           DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
