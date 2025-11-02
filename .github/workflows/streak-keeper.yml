@@ -13,7 +13,7 @@ jobs:
       - run: bun index.js
         env:
           DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
-          LESSONS: 1
+          LESSONS: 2
   delete-old-runs:
     runs-on: ubuntu-latest
     permissions:
