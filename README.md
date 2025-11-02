@@ -1,6 +1,6 @@
 # duolingo
 
-[![Keep my Duolingo streak](https://github.com/rfoel/duolingo/actions/workflows/streak-keeper.yml/badge.svg?branch=main)](https://github.com/rfoel/duolingo/actions/workflows/streak-keeper.yml)
+[![Keep my Duolingo streak](https://github.com/dngnd-forks/duolingo-2/actions/workflows/streak-keeper.yml/badge.svg?branch=main)](https://github.com/dngnd-forks/duolingo-2/actions/workflows/streak-keeper.yml)
 
 <img src="duo.svg" width="128px"/>
 
@@ -8,7 +8,7 @@ Streak keeper and XP farm for Duolingo. Never get demoted again!
 
 ### How to use
 
-1. [Fork this repository](https://github.com/rfoel/duolingo/fork)
+1. [Fork this repository](https://github.com/dngnd-forks/duolingo-2/fork)
 2. Go to [Duolingo](https://www.duolingo.com)
 3. While logged in, open the browser's console (Option (⌥) + Command (⌘) + J (on macOS) or Shift + CTRL + J (on Windows/Linux))
 4. Get the JWT token by pasting this in the console, and copy the value ( without `'`)
