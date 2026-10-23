@@ -1,6 +1,0 @@
-{
-	"name": "duolingo",
-	"version": "0.0.0",
-	"description": "Streak keeper and XP farm for Duolingo",
-	"type": "module"
-}

@@ -1,0 +1,35 @@
+name: Learn Duolingo
+
+on:
+  schedule:
+    - cron: '0 9,22 * * *'
+  workflow_dispatch:
+    inputs:
+      lessons:
+        description: 'Number of lessons to complete'
+        required: false
+        default: 1
+        type: number
+
+jobs:
+  study:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v7
+      - run: bash lesson.sh
+        env:
+          DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
+          LESSONS: ${{ inputs.lessons || 1 }}
+  delete-old-runs:
+    runs-on: ubuntu-slim
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2.1.0
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          keep_minimum_runs: 0
+          retain_days: 0

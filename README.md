@@ -1,6 +1,6 @@
 # duolingo
 
-[![Keep my Duolingo streak](https://github.com/rfoel/duolingo/actions/workflows/streak-keeper.yml/badge.svg?branch=main)](https://github.com/rfoel/duolingo/actions/workflows/streak-keeper.yml)
+[![Learn Duolingo](https://github.com/dngnd-forks/duolingo-2/actions/workflows/duolingo.yml/badge.svg?branch=main)](https://github.com/dngnd-forks/duolingo-2/actions/workflows/duolingo.yml)
 
 <img src="duo.svg" width="128px"/>
 
@@ -8,7 +8,7 @@ Streak keeper and XP farm for Duolingo. Never get demoted again!
 
 ### How to use
 
-1. [Fork this repository](https://github.com/rfoel/duolingo/fork)
+1. [Fork this repository](https://github.com/dngnd-forks/duolingo-2/fork)
 2. Go to [Duolingo](https://www.duolingo.com)
 3. While logged in, open the browser's console (Option (⌥) + Command (⌘) + J (on macOS) or Shift + CTRL + J (on Windows/Linux))
 4. Get the JWT token by pasting this in the console, and copy the value ( without `'`)
@@ -25,15 +25,11 @@ document.cookie
   7. For the secret name use `DUOLINGO_JWT` for the secret value use the copied value from step 4.
   8. Go the your forked repository and go the Actions tab and press the button `I understand my workflows, go ahead and enable them`
 
-## Workflows
+## Workflow
 
-### 🔥 Streak Keeper
+### 🦉 Learn Duolingo
 
-This project uses GitHub Actions scheduled workflow to keep your streak alive. The workflow can be viewed [here](.github/workflows/streak-keeper.yml).
-
-### 📚 Study
-
-This repository can also "study" lessons for you. This will give you XP so you won't get demoted never again! This workflow uses [workflow_dispatch](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch) to trigger the study session. You can choose the number of lessons to be done. The workflow can be viewed [here](.github/workflows/study.yml).
+A single workflow keeps your streak alive and lets you farm XP. It runs twice daily (9 AM and 10 PM UTC) and completes 1 lesson per run. You can also trigger it manually via [workflow_dispatch](https://docs.github.com/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch) and choose the number of lessons to be done. Old workflow runs are cleaned up automatically. The workflow can be viewed [here](.github/workflows/duolingo.yml).
 
 ## Caveats
 
@@ -42,16 +38,14 @@ This repository can also "study" lessons for you. This will give you XP so you w
 
 ## Running as a standalone script
 
-You can run this script outside GitHub if you want to. You can have an `.env` file with the `DUOLINGO_JWT` and run the script like so:
+You can run this script outside GitHub if you want to. You need `bash`, `curl` and `jq` installed, and a `DUOLINGO_JWT` env var:
 
 ```
-node --env-file=.env index.js
+DUOLINGO_JWT=... bash lesson.sh
 ```
 
-> Node v20.6.0 or later is needed to use the `--env-file` flag.
-
-You can also load the env in the terminal like so:
+You can also set the number of lessons:
 
 ```
-DUOLINGO_JWT=... node index.js
+DUOLINGO_JWT=... LESSONS=5 bash lesson.sh
 ```
