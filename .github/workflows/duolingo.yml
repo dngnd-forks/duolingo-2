@@ -2,7 +2,7 @@ name: Learn Duolingo
 
 on:
   schedule:
-    - cron: '0 9,22 * * *'
+    - cron: '17 9,21 * * *'   # 06:17 e 18:17 em Brasília
   workflow_dispatch:
     inputs:
       lessons:
