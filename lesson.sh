@@ -22,9 +22,9 @@ SUB=$(jq -Rr '
 	| .sub
 ' <<<"$JWT")
 
-LANGS=$("${CURL[@]}" "https://www.duolingo.com/2017-06-30/users/$SUB?fields=fromLanguage,learningLanguage")
+LANGS=$("${CURL[@]}" "https://www.duolingo.com/2017-06-30/users/$SUB?fields=fromLanguage,learningLanguage,courses")
 FROM=$(jq -r .fromLanguage <<<"$LANGS")
-TO=$(jq -r .learningLanguage <<<"$LANGS")
+TO=$(jq -r '[.learningLanguage, (.courses // [])[].learningLanguage] | map(select(. != null)) | .[0]' <<<"$LANGS")
 
 CHALLENGES='["assist","characterIntro","characterMatch","characterPuzzle","characterSelect","characterTrace","characterWrite","completeReverseTranslation","definition","dialogue","extendedMatch","extendedListenMatch","form","freeResponse","gapFill","judge","listen","listenComplete","listenMatch","match","name","listenComprehension","listenIsolation","listenSpeak","listenTap","orderTapComplete","partialListen","partialReverseTranslate","patternTapComplete","radioBinary","radioImageSelect","radioListenMatch","radioListenRecognize","radioSelect","readComprehension","reverseAssist","sameDifferent","select","selectPronunciation","selectTranscription","svgPuzzle","syllableTap","syllableListenTap","speak","tapCloze","tapClozeTable","tapComplete","tapCompleteTable","tapDescribe","translate","transliterate","transliterationAssist","typeCloze","typeClozeTable","typeComplete","typeCompleteTable","writeComprehension"]'
 
